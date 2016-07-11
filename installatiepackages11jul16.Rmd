@@ -53,6 +53,7 @@ str(miRcompData)
 head(miRcompData)
 class(miRcompData)
 ```
+# verder nog niet uitgeewerkt. Doorgegaan met easyqpcr zie betreffende project
 
 
 ```{r}
