@@ -1,0 +1,50 @@
+---
+title: "easyqpcr11jul16"
+author: "allerdien"
+date: "11 juli 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+# geopende library en data onderzoek
+```{r}
+library(EasyqpcR)
+data("Efficiency_calculation")
+head(Efficiency_calculation)
+str(Efficiency_calculation)
+dim(Efficiency_calculation)
+class(Efficiency_calculation)
+sessionInfo()
+```
+# berekenen slope efficientie. 
+
+```{r}
+?slope
+slope(data=Efficiency_calculation, q=c(1000, 100, 10, 1, 0.1), r=3, na.rm=TRUE)
+efficiency <- slope(data=Efficiency_calculation, q=c(1000, 100, 10, 1, 0.1), r=3, na.rm=TRUE)
+```
+
+# eigendata implementatie
+```{r}
+
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
