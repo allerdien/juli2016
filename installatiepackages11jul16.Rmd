@@ -1,0 +1,75 @@
+---
+title: "uitvoeringjul2016"
+author: "allerdien"
+date: "11 juli 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+## bioconductor
+qpcr packages en datasets installeren
+De plaats waar downloads neer worden gezet is: C:\Users\all.visser\AppData\Local\Temp\Rtmp0CdC2V\downloaded_packages
+
+```{r, eval=FALSE, include=FALSE}
+library("BiocInstaller", lib.loc="~/R/win-library/3.3")
+biocLite("ddCt")
+biocLite("EasyqpcR")
+biocLite("HTqPCR")
+biocLite("NormqPCR")
+biocLite("qpcrNorm")
+biocLite("ReadqPCR")
+biocLite("unifiedWMWqPCR")
+biocLite("miRcompData")
+
+
+```
+
+# Te laden packages
+
+```{r cars}
+library(lattice)
+library(Biobase)
+library(RColorBrewer)
+library(xtable)
+library(ddCt)
+library(qPCR.CT)
+```
+
+# laden data, package qPCR.Ct levert dataset aan
+```{r}
+library(miRcompData)
+data("cal.CT")
+data("miRcompData")
+str(miRcompData)
+head(miRcompData)
+class(miRcompData)
+```
+
+
+```{r}
+Ct.data.file.name <- c("miRcompData")
+sample.annotation.file.name <- NULL
+column.for.grouping <- NULL
+useOnlySamplesFromAnno <- FALSE
+```
+
+
+```
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
