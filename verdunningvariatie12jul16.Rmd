@@ -15,7 +15,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-# laden van data excel selectie opgeslagen als txt en deze ingeladen verdunningsamplesrunjun16 <- read.delim("N:/2016protocol-logboek-plaatjes/R-studio/juli2016/verdunningsamplesrunjun16.txt", stringsAsFactors=FALSE)
+# laden van data excel selectie opgeslagen als txt en deze ingeladen
 ```{r laden}
 verdunningsamplesrunjun16 <- read.delim("verdunningsamplesrunjun16.txt", stringsAsFactors = FALSE)
 View(verdunningsamplesrunjun16)
@@ -43,7 +43,7 @@ minimaaltoegevoegd <- minimum.ngul*10
 You can also embed plots, for example:
 
 ```{r plot, echo=FALSE}
-plot(verd)
+summary(verd)
 gemiddelde
 standaarddeviatie
 minimum.ngul
@@ -52,7 +52,7 @@ verdundmax
 verdundmin
 maximaaltoegevoegd
 minimaaltoegevoegd
-
+plot(verd)
 
 ```
 
